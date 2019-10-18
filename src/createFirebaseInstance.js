@@ -590,10 +590,10 @@ export default function createFirebaseInstance(firebase, configs, dispatch) {
       ...actionCreators
   }
 
-    firebase.extendApp(helpers)
-    firebase.extendApp({ helpers })
+  firebase.extendApp(helpers)
+  firebase.extendApp({ helpers })
 
-    return firebase
+  return firebase
 }
 
 /**
