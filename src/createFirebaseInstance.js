@@ -32,12 +32,7 @@ export const createFirebaseInstance = (firebase, configs, dispatch) => {
     authUid: null
   }
 
-  Object.defineProperty(firebase, '_', {
-    value: defaultInternals,
-    writable: true,
-    enumerable: true,
-    configurable: true
-  })
+  firebase.extendApp({ _: defaultInternals })
 
   /**
    * @private
@@ -520,5 +515,8 @@ export const createFirebaseInstance = (firebase, configs, dispatch) => {
     ...actionCreators
   }
 
-  return Object.assign(firebase, helpers, { helpers })
+  firebase.extendApp(helpers)
+  firebase.extendApp({ helpers })
+
+  return firebase
 }
