@@ -593,6 +593,7 @@ export default function createFirebaseInstance(firebase, configs, dispatch) {
   firebase.extendApp(helpers)
   firebase.extendApp({ helpers })
 
+  firebaseInstance = firebase;
   return firebase
 }
 
