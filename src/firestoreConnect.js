@@ -92,7 +92,7 @@ export default function firestoreConnect(queriesConfig = []) {
     }
 
     FirestoreConnectWrapped.propTypes = {
-      dispatch: PropTypes.func.isRequired,
+      dispatch: PropTypes.func,
       firebase: PropTypes.object,
       firestore: PropTypes.object
     }
