@@ -561,6 +561,7 @@ export default function createFirebaseInstance(firebase, configs, dispatch) {
    * @returns {firebase.database.Auth}
    */
   const helpers = {
+      _reactReduxFirebaseExtended: true,
       ref: path => firebase.database().ref(path),
       set,
       setWithMeta,
@@ -571,6 +572,7 @@ export default function createFirebaseInstance(firebase, configs, dispatch) {
       update,
       updateWithMeta,
       login,
+      handleRedirectResult,
       logout,
       updateAuth,
       updateEmail,
@@ -587,6 +589,7 @@ export default function createFirebaseInstance(firebase, configs, dispatch) {
       reloadAuth,
       linkWithCredential,
       promiseEvents,
+      dispatch,
       ...actionCreators
   }
 
